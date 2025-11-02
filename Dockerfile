@@ -4,6 +4,7 @@ COPY . .
 RUN mvn clean package
 
 FROM tomcat:9
-COPY --from=builder /JavaWeb/target/*.war /usr/local/tomcat/webapps
+COPY --from=builder /JavaWeb/target/*.jar /usr/local/tomcat/webapps
 EXPOSE 8080
+
 
